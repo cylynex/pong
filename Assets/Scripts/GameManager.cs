@@ -20,11 +20,17 @@ public class GameManager : MonoBehaviour {
 	public AudioSource hitWallNoise;
 	public GameObject paddle1;
 	public GameObject paddle2;
+	public Text haha;
+	public Text player1title;
+	public Text player2title;
+	public AudioSource laugh;
 
 	void Start() {
 		ballStartPlayer2 = new Vector3(-5,0,0);
 		ballStartPlayer1 = new Vector3(5,0,0);
 		ballStartDirection = new Vector2(5f,5f);
+
+		InvokeRepeating("FuckWithPlayer", 0f, 10f);
 	}
 	void Update () {
 		if (Input.GetKeyUp(KeyCode.Space)) {
@@ -32,9 +38,28 @@ public class GameManager : MonoBehaviour {
 		}	
 
 		MatchBall();
-
 	}
 
+
+	// Fuck with player
+	void FuckWithPlayer() {
+		int hahaRoll = Random.Range(1,3);
+		if (hahaRoll < 3) {
+			if (hahaRoll == 1) {
+				laugh.Play();
+				player1title.color = Color.red;
+				player2title.color = Color.white;
+				paddle1.transform.localScale -= new Vector3(0,2f,0);
+				haha.text = "Fucking with Player 1...";
+			} else if (hahaRoll == 2) {
+				laugh.Play();
+				player2title.color = Color.red;
+				player1title.color = Color.white;
+				paddle2.transform.localScale -= new Vector3(0,2f,0);
+				haha.text = "Fucking with Player 2...";
+			}
+		}
+	}
 
 	// Test Script to autoplay
 	void MatchBall() {
