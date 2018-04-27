@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
 	public Text p2ScoreBoard;
 
 	Vector2 ballStartDirection;
+	public AudioSource pointScoredNoise;
+	public AudioSource hitWallNoise;
 
 	void Start() {
 		ballStartPlayer2 = new Vector3(-5,0,0);
@@ -35,8 +37,17 @@ public class GameManager : MonoBehaviour {
 	}
 
 
+	public void ScoreSound() {
+		pointScoredNoise.Play();
+	}
+
+	public void HitWall() {
+		hitWallNoise.Play();
+	}
+
 	// Reset the ball and put on the side of whoever just got scored on.
 	public void ResetBall(int side) {
+		pointScoredNoise.Play();
 		//Destroy(ball);
 		//Instantiate(ballPrefab,ballStartLocation,Quaternion.identity);
 		Vector3 ballSpot;
