@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 241876228}
   - component: {fileID: 241876229}
   - component: {fileID: 241876230}
+  - component: {fileID: 241876231}
   m_Layer: 5
   m_Name: H Wall (1)
   m_TagString: Untagged
@@ -290,6 +291,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.04}
   m_EdgeRadius: 0
+--- !u!50 &241876231
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 241876227}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &323826840
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,19 +555,19 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 471398631}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &471398636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -767,7 +788,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 544940625}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -779,7 +800,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &544940629
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1077,6 +1098,7 @@ GameObject:
   - component: {fileID: 1208626635}
   - component: {fileID: 1208626636}
   - component: {fileID: 1208626637}
+  - component: {fileID: 1208626638}
   m_Layer: 5
   m_Name: V Wall
   m_TagString: p2Point
@@ -1166,6 +1188,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.04}
   m_EdgeRadius: 0
+--- !u!114 &1208626638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1208626634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47aeea79d56f44aa997e1eada8e7ce60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorekeeper: {fileID: 323826841}
 --- !u!1 &1250660734
 GameObject:
   m_ObjectHideFlags: 0

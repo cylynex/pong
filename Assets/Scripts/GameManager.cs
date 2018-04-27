@@ -7,19 +7,24 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject ball;
 	public GameObject ballPrefab;
-	Vector3 ballStartLocation;
+	Vector3 ballStartPlayer1;
+	Vector3 ballStartPlayer2;
 	public int player1Score = 0;
 	public int player2Score = 0;
 
 	public Text p1ScoreBoard;
 	public Text p2ScoreBoard;
 
+	Vector2 ballStartDirection;
+
 	void Start() {
-		ballStartLocation = new Vector3(5,0,0);
+		ballStartPlayer2 = new Vector3(-5,0,0);
+		ballStartPlayer1 = new Vector3(5,0,0);
+		ballStartDirection = new Vector2(5f,5f);
 	}
 	void Update () {
 		if (Input.GetKeyUp(KeyCode.Space)) {
-			ball.GetComponent<Rigidbody2D>().velocity = new Vector2(5f,5f);
+			ball.GetComponent<Rigidbody2D>().velocity = ballStartDirection;
 		}	
 	}
 
@@ -30,11 +35,20 @@ public class GameManager : MonoBehaviour {
 	}
 
 
-	// Reset the ball
-	public void ResetBall() {
+	// Reset the ball and put on the side of whoever just got scored on.
+	public void ResetBall(int side) {
 		//Destroy(ball);
 		//Instantiate(ballPrefab,ballStartLocation,Quaternion.identity);
-		ball.transform.position = ballStartLocation;
+		Vector3 ballSpot;
+		if (side == 1) {
+			ballSpot = ballStartPlayer2;
+			ballStartDirection = new Vector2(5f,5f);
+		} else {
+			ballSpot = ballStartPlayer1;
+			ballStartDirection = new Vector2(-5f,5f);
+		}
+
+		ball.transform.position = ballSpot;
 		ball.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 	}
 }

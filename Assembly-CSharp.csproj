@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Paddle1.cs" />
      <Compile Include="Assets\Scripts\Paddle2.cs" />
      <Compile Include="Assets\Scripts\Player1Score.cs" />
+     <Compile Include="Assets\Scripts\Player2Score.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Volumes/Glacier/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
