@@ -40,12 +40,13 @@ public class GameManager : MonoBehaviour {
 		//Destroy(ball);
 		//Instantiate(ballPrefab,ballStartLocation,Quaternion.identity);
 		Vector3 ballSpot;
+		float randSpin = Random.Range(1f,10f);
 		if (side == 1) {
 			ballSpot = ballStartPlayer2;
-			ballStartDirection = new Vector2(5f,5f);
+			ballStartDirection = new Vector2(5f,randSpin);
 		} else {
 			ballSpot = ballStartPlayer1;
-			ballStartDirection = new Vector2(-5f,5f);
+			ballStartDirection = new Vector2(-5f,randSpin);
 		}
 
 		ball.transform.position = ballSpot;
