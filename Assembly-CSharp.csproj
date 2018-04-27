@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\HitWall.cs" />
      <Compile Include="Assets\Scripts\Paddle1.cs" />
      <Compile Include="Assets\Scripts\Paddle2.cs" />
      <Compile Include="Assets\Scripts\Player1Score.cs" />

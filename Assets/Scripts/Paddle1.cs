@@ -5,11 +5,15 @@ using UnityEngine;
 public class Paddle1 : MonoBehaviour {
 
 	public float speed = 5f;
-
+	public AudioSource hitNoise;
 	void Update () {
 		GetMovement();
 	}
 
+
+	void OnCollisionEnter2D(Collision2D coll) {
+		hitNoise.Play();
+	}
 
 	void GetMovement() {
 		if (Input.GetKey("w")) {
