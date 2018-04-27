@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
 	Vector2 ballStartDirection;
 	public AudioSource pointScoredNoise;
 	public AudioSource hitWallNoise;
+	public GameObject paddle1;
+	public GameObject paddle2;
 
 	void Start() {
 		ballStartPlayer2 = new Vector3(-5,0,0);
@@ -28,8 +30,20 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetKeyUp(KeyCode.Space)) {
 			ball.GetComponent<Rigidbody2D>().velocity = ballStartDirection;
 		}	
+
+		MatchBall();
+
 	}
 
+
+	// Test Script to autoplay
+	void MatchBall() {
+		float ySpot = ball.transform.position.y;
+		Vector3 paddle1Spot = new Vector3(paddle1.transform.position.x, ySpot,paddle1.transform.position.z);
+		Vector3 paddle2Spot = new Vector3(paddle2.transform.position.x, ySpot,paddle2.transform.position.z);
+		//paddle1.transform.position = paddle1Spot;
+		paddle2.transform.position = paddle2Spot;
+	}
 
 	public void UpdateScores() {
 		p1ScoreBoard.text = player1Score.ToString();

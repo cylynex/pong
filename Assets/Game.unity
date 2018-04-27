@@ -442,6 +442,8 @@ MonoBehaviour:
   p2ScoreBoard: {fileID: 1890361764}
   pointScoredNoise: {fileID: 323826843}
   hitWallNoise: {fileID: 323826844}
+  paddle1: {fileID: 471398631}
+  paddle2: {fileID: 544940625}
 --- !u!4 &323826842
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class Paddle1 : MonoBehaviour {
 	}
 
 
+	// Test Script to autoplay
+
+
 	void OnCollisionEnter2D(Collision2D coll) {
 		hitNoise.Play();
 	}
