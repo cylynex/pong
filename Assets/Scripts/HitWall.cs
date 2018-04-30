@@ -8,5 +8,8 @@ public class HitWall : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		hitNoise.Play();
+
+		// Slightly randomize vector
+
 	}
 }

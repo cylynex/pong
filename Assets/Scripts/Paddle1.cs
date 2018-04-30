@@ -6,16 +6,21 @@ public class Paddle1 : MonoBehaviour {
 
 	public float speed = 5f;
 	public AudioSource hitNoise;
+	public GameManager scoreKeeper;
+	private float upperLimit = 2.4f;
+	private float lowerLimit = -3f;
+
 	void Update () {
 		GetMovement();
 	}
 
 
-	// Test Script to autoplay
-
-
 	void OnCollisionEnter2D(Collision2D coll) {
+		
 		hitNoise.Play();
+		if (GameManager.gameMode == 2) { 
+			scoreKeeper.LightningSplit(transform);
+		}
 	}
 
 	void GetMovement() {
@@ -25,5 +30,10 @@ public class Paddle1 : MonoBehaviour {
 		else if (Input.GetKey("s")) {
 			transform.Translate(Vector2.down * speed * Time.deltaTime);
 		}
+
+		Vector3 pos = transform.position;
+		pos.y = Mathf.Clamp(pos.y, lowerLimit, upperLimit);
+		transform.position = pos;
+
 	}
 }
